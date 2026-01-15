@@ -1,0 +1,13 @@
+
+# Ignore everything
+*
+
+# Allow these files
+!main.py
+!movies.db
+!READ ME.txt
+!requirements.txt
+
+# Allow gitignore itself
+!.gitignore
+
