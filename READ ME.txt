@@ -1,0 +1,79 @@
+Jasne — poniżej masz **wersję czysto tekstową**, bez tabel, bez emoji, bez formatowania Markdown. Idealna do pliku README.txt.
+
+-----------------------------------------
+README.txt
+-----------------------------------------
+
+FastAPI Movies API  
+Opis projektu  
+Aplikacja udostępnia proste API oparte na FastAPI, które zarządza bazą danych filmów zapisanych w SQLite. Zawiera podstawowe operacje CRUD oraz kilka dodatkowych endpointów demonstracyjnych, takich jak działania matematyczne i reverse geocoding.
+
+Funkcjonalności
+
+1. Endpointy demonstracyjne:
+- GET /  
+  Zwraca komunikat powitalny.
+- GET /sum?x=&y=  
+  Dodawanie dwóch liczb.
+- GET /subtract?x=&y=  
+  Odejmowanie dwóch liczb.
+- GET /multiply?x=&y=  
+  Mnożenie dwóch liczb.
+- GET /geocode?lat=&lon=  
+  Reverse geocoding z OpenStreetMap.
+
+2. Endpointy filmów (CRUD):
+- GET /movies  
+  Pobiera listę wszystkich filmów.
+- GET /movies/{movie_id}  
+  Pobiera pojedynczy film.
+- POST /movies  
+  Dodaje nowy film.
+- PUT /movies/{movie_id}  
+  Aktualizuje istniejący film.
+- DELETE /movies/{movie_id}  
+  Usuwa film o podanym ID.
+- DELETE /movies?confirm=yes  
+  Usuwa wszystkie filmy po potwierdzeniu.
+
+Struktura bazy danych  
+
+1. Plik bazy danych: movies.db
+
+
+Instrukcja uruchomienia
+
+1. Instalacja zależności:
+pip install -r requirements.txt
+
+2. Uruchomienie serwera:
+uvicorn main:app --reload
+
+3. Oficjalna dokumentacja API 
+
+Przykłady użycia
+
+Dodanie filmu (POST /movies):
+{
+  "title": "Inception",
+  "year": 2010,
+  "actors": "Leonardo DiCaprio"
+}
+
+Aktualizacja filmu (PUT /movies/1):
+{
+  "title": "Inception Director's Cut",
+  "year": 2010,
+  "actors": "Leonardo DiCaprio"
+}
+
+Usunięcie wszystkich filmów:
+DELETE /movies?confirm=yes
+
+Technologie użyte w projekcie:
+- FastAPI  
+- SQLite3  
+- Pydantic  
+- Requests  
+- Uvicorn  
+
